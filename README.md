@@ -4,8 +4,10 @@ This project integrates an Arduino Mega 2560, Google Teachable Machine, and Pyth
 
 FILE INFO:
 
-Arduino Code (LED Control via Serial).py ---> The code for the Arduino for LED control
-Python Script (Face Detection & Serial Communication).py ---> The Python code which reads webcam input and runs it through the teachable model(Sends 1 to Arduino if face is detected otherwise 0. pressing "q" shuts it down)
+Arduino Code (LED Control via Serial).py ---> The code for the Arduino for LED control.
+
+Python Script (Face Detection & Serial Communication).py ---> The Python code which reads webcam input and runs it through the teachable model(Sends 1 to Arduino if face is detected otherwise 0. pressing "q" shuts it down).
+
 tm-my-image-model(1).zip ---> TensorFlow Google Teachable Machine Image Model Detector files and code. 
 
 
