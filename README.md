@@ -55,5 +55,25 @@ LED (Cathode -)------>GND
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Running the Project:
+
+1. Upload the Arduino Code
+Open Arduino IDE.
+Select Tools → Board → Arduino Mega 2560.
+Select the correct COM Port.
+Copy & paste the Arduino Code above.
+Click Upload.
+
+2. Run the Python Script
+Open Command Prompt or Terminal.
+Navigate to the script directory: cd path/to/your/script
+
+Run the script: python your_script.py
+
+
+3. Test the System
+If a face is detected, the LED turns ON.
+If no face is detected, the LED stays OFF.
+
 
 
