@@ -1,9 +1,12 @@
 # IT254Project1-Automated-Body-Sensor
 This project integrates an Arduino Mega 2560, Google Teachable Machine, and Python to create a face-detection-based security system which can also serve as a body sensor for multitude of reasons. When the system detects a face, it triggers an LED on the Arduino board using Serial Communication.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Requirements/Materials:
 
-Hardware
+
+
+HARDWARE:
 
 Arduino Mega 2560 – The microcontroller to process serial data.
 
@@ -27,7 +30,7 @@ PySerial – Enables communication between Python and Arduino.
 
 Arduino IDE – To upload code to the Arduino Mega 2560.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Installation & Setup
+Installation & Setup:
 
 Step 1: Install Required Python Libraries
 
@@ -47,8 +50,7 @@ Step 3: Connect the LED to Arduino
 Component----------Arduino Pin
 
 LED (Anode +)----> Pin 13 (via 220Ω resistor)
-
-LED (Cathode -)------>GND
+LED (Cathode -)------>GND 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
