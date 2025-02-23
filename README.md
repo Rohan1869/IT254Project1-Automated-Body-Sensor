@@ -10,11 +10,15 @@ Python Script (Face Detection & Serial Communication).py ---> The Python code wh
 
 tm-my-image-model(1).zip ---> TensorFlow Google Teachable Machine Image Model Detector files and code. 
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 Requirements/Materials:
+
+
+
+
 
 
 
