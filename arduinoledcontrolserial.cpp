@@ -1,6 +1,5 @@
-# Arduino Code (LED Control via Serial).cpp
 
-int ledPin = 13;  
+int ledPin = 9;  
 char receivedChar;
 
 void setup() {
