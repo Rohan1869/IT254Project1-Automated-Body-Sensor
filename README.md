@@ -91,7 +91,6 @@ Click Upload.
 2. Run the Python Script
 Open Command Prompt or Terminal.
 Navigate to the script directory: cd path/to/your/script
-
 Run the script: python your_script.py
 
 
