@@ -4,11 +4,11 @@ This project integrates an Arduino Mega 2560, Google Teachable Machine, and Pyth
 
 FILE INFO:
 
-Arduino Code (LED Control via Serial).py ---> The code for the Arduino for LED control.
+arduionoledcontrolserial.py ---> The code for the Arduino for LED control.
 
-Python Script (Face Detection & Serial Communication).py ---> The Python code which reads webcam input and runs it through the teachable model(Sends 1 to Arduino if face is detected otherwise 0. pressing "q" shuts it down).
+faceserial.py ---> The Python code which reads webcam input and runs it through the teachable model(Sends 1 to Arduino if face is detected otherwise 0. pressing "q" shuts it down).
 
-tm-my-image-model(1).zip ---> TensorFlow Google Teachable Machine Image Model Detector files and code. 
+labels.txt ------> contains data for model determination categories.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -30,11 +30,12 @@ LED + 220Ω Resistor – Used for visual indication.
 
 USB Cable – To connect the Arduino to the PC.
 
-Jumper Wires – To connect the LED and Arduino.
-
 Webcam – Used for real-time face detection.
 
-Software & Libraries
+
+
+
+Software & Libraries:
 
 Python – Runs the AI model and processes webcam data.
 
@@ -50,10 +51,8 @@ Installation & Setup:
 
 Step 1: Install Required Python Libraries
 
-Open a terminal and run: pip install tensorflow tensorflowjs opencv-python pyserial numpy
-
-
-pip install tensorflow tensorflowjs opencv-python pyserial numpy
+Open a terminal and run: pip install tensorflow==2.16.1  opencv-python pyserial numpy Pillow hypy
+(python version is 3.12.9)
 
 Step 2: Load the Teachable Machine Model
 
@@ -96,5 +95,4 @@ Run the script: python your_script.py
 If a face is detected, the LED turns ON.
 If no face is detected, the LED stays OFF.
 
-
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
