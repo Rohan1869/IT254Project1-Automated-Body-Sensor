@@ -4,7 +4,7 @@ This project integrates an Arduino Mega 2560, Google Teachable Machine, and Pyth
 
 FILE INFO:
 
-arduionoledcontrolserial.py ---> The code for the Arduino for LED control.
+arduionoledcontrolserial.cpp ---> The code for the Arduino for LED control.
 
 faceserial.py ---> The Python code which reads webcam input and runs it through the teachable model(Sends 1 to Arduino if face is detected otherwise 0. pressing "q" shuts it down).
 
