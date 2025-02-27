@@ -58,16 +58,14 @@ while True:
     data[0] = normalized_image_array
     prediction = my_model.predict(data)
     index = np.argmax(prediction)
-    print(f"Index : {index}")
     class_name = load_label[index].strip()
-    print(f"Class name : {class_name}")
     confidence_score = prediction[0][index]
     if class_name == 0:
-        print(f"No face detected")
+        print("No face detected")
         arduino.write(f"{class_name}\n".encode())
         time.sleep(0.05)
     else:
-        print(f" face detected")
+        print("face detected")
         arduino.write(f"{class_name}\n".encode())
         time.sleep(0.05)
     if cv2.waitKey(1) & 0xFF == ord('q'):
