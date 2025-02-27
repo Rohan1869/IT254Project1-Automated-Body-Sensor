@@ -45,6 +45,8 @@ PySerial – Enables communication between Python and Arduino.
 
 Arduino IDE – To upload code to the Arduino Mega 2560.
 
+keras model ----> trained model
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Installation & Setup:
 
@@ -58,7 +60,7 @@ Open a terminal and run: pip install tensorflow==2.16.1  opencv-python pyserial 
 
 Step 2: Load the Teachable Machine Model
 
-Export your Teachable Machine Image Model in TensorFlow.js format.
+Export your Teachable Machine Image Model aka keras model and import your labels.txt file.
 
 Extract and place it in the project folder.
 
