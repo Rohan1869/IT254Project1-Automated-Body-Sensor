@@ -65,9 +65,14 @@ Step 3: Connect the LED to Arduino
 
 Component----------Arduino Pin
 
-LED (Anode +)----> Pin 13 (via 220Ω resistor)
+LED (Anode +)----> Pin 9 then connect to one end of 220Ω resistor
 
-LED (Cathode -)------>GND 
+LED (Cathode -)------>breadboard connected to one resistor end
+
+RESISTOR: then connect the other resistor end to GND of Arduino
+
+![image](https://github.com/user-attachments/assets/fe7a7077-179a-42e6-925d-a3c6e0fd93fc)
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
