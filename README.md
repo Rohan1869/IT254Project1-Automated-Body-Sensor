@@ -39,8 +39,6 @@ Software & Libraries:
 
 Python – Runs the AI model and processes webcam data.
 
-TensorFlow.js – Loads the trained model.
-
 OpenCV – Captures and processes images from the webcam.
 
 PySerial – Enables communication between Python and Arduino.
