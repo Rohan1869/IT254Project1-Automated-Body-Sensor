@@ -104,12 +104,19 @@ If no face is detected, the LED stays OFF.
 VERSIONS USED:
 
 Python: 3.12.9
+
 TensorFlow: 2.16.1
+
 Keras: Latest
+
 OpenCV: 4.11.0.86
+
 PySerial: 3.5
+
 Pillow: 11.1.0
+
 Arduino IDE: Latest
+
 Hardware: Arduino Mega 2560
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
