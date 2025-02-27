@@ -6,7 +6,7 @@ FILE INFO:
 
 arduionoledcontrolserial.cpp ---> The code for the Arduino for LED control.
 
-faceserial.py ---> The Python code which reads webcam input and runs it through the teachable model(Sends 1 to Arduino if face is detected otherwise 0. pressing "q" shuts it down).
+faceserial.py ---> The Python code which reads webcam input and runs it through the teachable model(Sends 0 to Arduino if face is detected otherwise 1. pressing "q" shuts it down).
 
 labels.txt ------> contains data for model determination categories.
 
