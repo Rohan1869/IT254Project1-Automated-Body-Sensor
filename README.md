@@ -52,6 +52,9 @@ Installation & Setup:
 Step 1: Install Required Python Libraries
 
 Open a terminal and run: pip install tensorflow==2.16.1  opencv-python pyserial numpy Pillow hypy
+
+
+
 (python version is 3.12.9)
 
 Step 2: Load the Teachable Machine Model
@@ -95,4 +98,16 @@ Run the script: python your_script.py
 If a face is detected, the LED turns ON.
 If no face is detected, the LED stays OFF.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+VERSIONS USED:
+
+Python: 3.12.9
+TensorFlow: 2.16.1
+Keras: Latest
+OpenCV: 4.11.0.86
+PySerial: 3.5
+Pillow: 11.1.0
+Arduino IDE: Latest
+Hardware: Arduino Mega 2560
+
