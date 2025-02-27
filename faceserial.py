@@ -1,20 +1,36 @@
-#Python Script (Face Detection & Serial Communication)
+# Python Script (Face Detection & Serial Communication)
 
 import cv2
 import serial
+import time
 import numpy as np
-import tensorflow as tf
-import json
+import h5py
+from tensorflow import keras
+from tensorflow.keras.optimizers import Adam
+from PIL import Image, ImageOps
+
 
 # Load Teachable Machine model
-MODEL_PATH = "model.json"
+MODEL_PATH = "keras_model.h5"
 
-# Load model architecture and weights
-with open("model.json", "r") as f:
-    model_json = json.load(f)
+# Code to ignore groups from the config
+f = h5py.File("keras_model.h5", mode="r+")
+model_config_string = f.attrs.get("model_config")
 
-model = tf.keras.models.model_from_json(json.dumps(model_json))
-model.load_weights("weights.bin")
+if model_config_string.find('"groups": 1,') != -1:
+    model_config_string = model_config_string.replace('"groups": 1,', '')
+
+f.attrs.modify('model_config', model_config_string)
+f.flush()
+
+model_config_string = f.attrs.get("model_config")
+assert model_config_string.find('"groups": 1,') == -1
+
+# Load model
+my_model = keras.models.load_model("./keras_model.h5",compile=False)
+
+# Load label
+load_label = open("labels.txt", "r").readlines()
 
 # Initialize Serial Communication with Arduino
 arduino = serial.Serial('COM3', 9600)
@@ -26,25 +42,41 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
+    cv2.imshow("Camera Feed", frame)
 
-    # Resize frame to match model input size
-    resized_frame = cv2.resize(frame, (224, 224))
-    input_data = np.expand_dims(resized_frame, axis=0).astype(np.float32)
+# Resize the frame
+    size = (224, 224)
+    image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+    image = ImageOps.fit(image, size, Image.Resampling.LANCZOS)
 
-    # Run model prediction
-    predictions = model.predict(input_data)
-    face_detected = predictions[0][1] > 0.5  # Adjust threshold if needed
+    # Normalize the image
+    image_array = np.asarray(image)
+    normalized_image_array = (image_array.astype(np.float32) / 127.5) - 1
 
-    # Send signal to Arduino
-    arduino.write(b'1' if face_detected else b'0')
-
-    # Display the webcam feed
-    cv2.imshow("Face Detection", frame)
-
+    # Load the image into the array
+    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+    data[0] = normalized_image_array
+    prediction = my_model.predict(data)
+    index = np.argmax(prediction)
+    print(f"Index : {index}")
+    class_name = load_label[index].strip()
+    print(f"Class name : {class_name}")
+    confidence_score = prediction[0][index]
+    if class_name == 0:
+        print(f"No face detected")
+        arduino.write(f"{class_name}\n".encode())
+        time.sleep(0.05)
+    else:
+        print(f" face detected")
+        arduino.write(f"{class_name}\n".encode())
+        time.sleep(0.05)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 # Cleanup
 cap.release()
 cv2.destroyAllWindows()
+
+#Turn off LED
+arduino.write(f"0\n".encode())
 arduino.close()
