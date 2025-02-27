@@ -46,6 +46,7 @@ OpenCV – Captures and processes images from the webcam.
 PySerial – Enables communication between Python and Arduino.
 
 Arduino IDE – To upload code to the Arduino Mega 2560.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Installation & Setup:
 
